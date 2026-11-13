@@ -8,11 +8,11 @@ resource "aws_vpc" "main" {
   }
 }
 
-# resource "aws_subnet" "sub1" {
-#   vpc_id     = aws_vpc.main.id
-#   cidr_block = var.sub1
+resource "aws_subnet" "sub1" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.sub1
 
-#   tags = {
-#     Name = "Main"
-#   }
-# }
+  tags = {
+    Name = var.sub1_name
+  }
+}
